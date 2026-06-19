@@ -1,0 +1,559 @@
+annotations: []
+nodes:
+  - boot_disk_size: null
+    configuration: |-
+      Building configuration...
+
+      Current configuration : 3395 bytes
+      !
+      ! Last configuration change at 17:32:33 UTC Sat Jun 13 2026 by ciat1
+      !
+      version 15.2
+      service timestamps debug datetime msec
+      service timestamps log datetime msec
+      no service password-encryption
+      service compress-config
+      !
+      hostname ASw1
+      !
+      boot-start-marker
+      boot-end-marker
+      !
+      !
+      no logging console
+      enable password ciat1-enable
+      !
+      username console1 password 0 conpass1
+      username ciat1 privilege 15 password 0 grad1
+      username telnet1 password 0 telpass1
+      username ssh1 password 0 sshpass1
+      no aaa new-model
+      !
+      !
+      !
+      !
+      !
+      !
+      !
+      !
+      no ip domain-lookup
+      ip domain-name ciat.lab
+      ip cef
+      no ipv6 cef
+      !
+      !
+      !
+      spanning-tree mode pvst
+      spanning-tree extend system-id
+      !
+      !
+      !
+      !
+      !
+      !
+      !
+      !
+      !
+      !
+      !
+      !
+      !
+      !
+      !
+      interface GigabitEthernet0/0
+       speed 1000
+       duplex full
+       no negotiation auto
+      !
+      interface GigabitEthernet0/1
+       negotiation auto
+      !
+      interface GigabitEthernet0/2
+       negotiation auto
+      !
+      interface GigabitEthernet0/3
+       shutdown
+       negotiation auto
+      !
+      interface GigabitEthernet1/0
+       shutdown
+       negotiation auto
+      !
+      interface GigabitEthernet1/1
+       shutdown
+       negotiation auto
+      !
+      interface GigabitEthernet1/2
+       shutdown
+       negotiation auto
+      !
+      interface GigabitEthernet1/3
+       shutdown
+       negotiation auto
+      !
+      interface Vlan1
+       ip address 192.168.10.7 255.255.255.0
+      !
+      ip forward-protocol nd
+      !
+      ip http server
+      ip http secure-server
+      !
+      ip ssh version 2
+      ip ssh server algorithm encryption aes128-ctr aes192-ctr aes256-ctr
+      ip ssh client algorithm encryption aes128-ctr aes192-ctr aes256-ctr
+      !
+      !
+      !
+      !
+      !
+      !
+      control-plane
+      !
+      banner exec ^CCC
+      IOSv - Cisco Systems Confidential -
+
+      Supplemental End User License Restrictions
+
+      This IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.
+
+      By using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.
+      ^C
+      banner incoming ^CCC
+      IOSv - Cisco Systems Confidential -
+
+      Supplemental End User License Restrictions
+
+      This IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.
+
+      By using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.
+      ^C
+      banner login ^CCC
+      IOSv - Cisco Systems Confidential -
+
+      Supplemental End User License Restrictions
+
+      This IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.
+
+      By using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.
+      ^C
+      !
+      line con 0
+       exec-timeout 0 0
+       password con1-login
+       login local
+      line aux 0
+      line vty 0 1
+       exec-timeout 0 0
+       password tel1-login
+       login local
+       transport input telnet ssh
+      line vty 2 4
+       exec-timeout 0 0
+       login
+      !
+      !
+      end
+    cpu_limit: 100
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n0
+    image_definition: null
+    label: ASw1
+    node_definition: iosvl2
+    ram: 768
+    tags: []
+    x: -360
+    y: 200
+    interfaces:
+      - id: i0
+        label: Loopback0
+        type: loopback
+      - id: i1
+        label: GigabitEthernet0/0
+        slot: 0
+        type: physical
+      - id: i2
+        label: GigabitEthernet0/1
+        slot: 1
+        type: physical
+      - id: i3
+        label: GigabitEthernet0/2
+        slot: 2
+        type: physical
+      - id: i4
+        label: GigabitEthernet0/3
+        slot: 3
+        type: physical
+      - id: i5
+        label: GigabitEthernet1/0
+        slot: 4
+        type: physical
+      - id: i6
+        label: GigabitEthernet1/1
+        slot: 5
+        type: physical
+      - id: i7
+        label: GigabitEthernet1/2
+        slot: 6
+        type: physical
+      - id: i8
+        label: GigabitEthernet1/3
+        slot: 7
+        type: physical
+  - boot_disk_size: null
+    configuration: |-
+      Building configuration...
+
+      Current configuration : 3395 bytes
+      !
+      ! Last configuration change at 17:32:32 UTC Sat Jun 13 2026 by ciat2
+      !
+      version 15.2
+      service timestamps debug datetime msec
+      service timestamps log datetime msec
+      no service password-encryption
+      service compress-config
+      !
+      hostname ASw2
+      !
+      boot-start-marker
+      boot-end-marker
+      !
+      !
+      no logging console
+      enable password ciat2-enable
+      !
+      username console2 password 0 conpass2
+      username ciat2 privilege 15 password 0 grad2
+      username telnet2 password 0 telpass2
+      username ssh2 password 0 sshpass2
+      no aaa new-model
+      !
+      !
+      !
+      !
+      !
+      !
+      !
+      !
+      no ip domain-lookup
+      ip domain-name ciat.lab
+      ip cef
+      no ipv6 cef
+      !
+      !
+      !
+      spanning-tree mode pvst
+      spanning-tree extend system-id
+      !
+      !
+      !
+      !
+      !
+      !
+      !
+      !
+      !
+      !
+      !
+      !
+      !
+      !
+      !
+      interface GigabitEthernet0/0
+       speed 1000
+       duplex full
+       no negotiation auto
+      !
+      interface GigabitEthernet0/1
+       negotiation auto
+      !
+      interface GigabitEthernet0/2
+       negotiation auto
+      !
+      interface GigabitEthernet0/3
+       shutdown
+       negotiation auto
+      !
+      interface GigabitEthernet1/0
+       shutdown
+       negotiation auto
+      !
+      interface GigabitEthernet1/1
+       shutdown
+       negotiation auto
+      !
+      interface GigabitEthernet1/2
+       shutdown
+       negotiation auto
+      !
+      interface GigabitEthernet1/3
+       shutdown
+       negotiation auto
+      !
+      interface Vlan1
+       ip address 192.168.20.8 255.255.255.0
+      !
+      ip forward-protocol nd
+      !
+      ip http server
+      ip http secure-server
+      !
+      ip ssh version 2
+      ip ssh server algorithm encryption aes128-ctr aes192-ctr aes256-ctr
+      ip ssh client algorithm encryption aes128-ctr aes192-ctr aes256-ctr
+      !
+      !
+      !
+      !
+      !
+      !
+      control-plane
+      !
+      banner exec ^CCC
+      IOSv - Cisco Systems Confidential -
+
+      Supplemental End User License Restrictions
+
+      This IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.
+
+      By using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.
+      ^C
+      banner incoming ^CCC
+      IOSv - Cisco Systems Confidential -
+
+      Supplemental End User License Restrictions
+
+      This IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.
+
+      By using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.
+      ^C
+      banner login ^CCC
+      IOSv - Cisco Systems Confidential -
+
+      Supplemental End User License Restrictions
+
+      This IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.
+
+      By using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.
+      ^C
+      !
+      line con 0
+       exec-timeout 0 0
+       password con2-login
+       login local
+      line aux 0
+      line vty 0 1
+       exec-timeout 0 0
+       password tel2-login
+       login local
+       transport input telnet ssh
+      line vty 2 4
+       exec-timeout 0 0
+       login
+      !
+      !
+      end
+    cpu_limit: 100
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n1
+    image_definition: null
+    label: ASw2
+    node_definition: iosvl2
+    ram: 768
+    tags: []
+    x: -160
+    y: 200
+    interfaces:
+      - id: i0
+        label: Loopback0
+        type: loopback
+      - id: i1
+        label: GigabitEthernet0/0
+        slot: 0
+        type: physical
+      - id: i2
+        label: GigabitEthernet0/1
+        slot: 1
+        type: physical
+      - id: i3
+        label: GigabitEthernet0/2
+        slot: 2
+        type: physical
+      - id: i4
+        label: GigabitEthernet0/3
+        slot: 3
+        type: physical
+      - id: i5
+        label: GigabitEthernet1/0
+        slot: 4
+        type: physical
+      - id: i6
+        label: GigabitEthernet1/1
+        slot: 5
+        type: physical
+      - id: i7
+        label: GigabitEthernet1/2
+        slot: 6
+        type: physical
+      - id: i8
+        label: GigabitEthernet1/3
+        slot: 7
+        type: physical
+  - boot_disk_size: 16
+    configuration: |-
+      # this is a shell script which will be sourced at boot
+      hostname PC-A
+      sudo ifconfig eth0 hw ether a0:a0:a0:a0:a0:a0
+      # configurable user account
+      USERNAME=cisco
+      PASSWORD=cisco
+      # network config
+      ip addr add 192.168.10.101/24 dev eth0 || true
+      ip route add default via 192.168.10.1 || true
+    cpu_limit: 100
+    cpus: 1
+    data_volume: 0
+    hide_links: false
+    id: n2
+    image_definition: null
+    label: PC-A
+    node_definition: desktop
+    ram: 512
+    tags: []
+    x: -480
+    y: 80
+    interfaces:
+      - id: i0
+        label: eth0
+        slot: 0
+        type: physical
+  - boot_disk_size: 16
+    configuration: |-
+      # this is a shell script which will be sourced at boot
+      hostname PC-B
+      sudo ifconfig eth0 hw ether b0:b0:b0:b0:b0:b0
+      # configurable user account
+      USERNAME=cisco
+      PASSWORD=cisco
+      # network config
+      ip addr add 192.168.10.102/24 dev eth0 || true
+      ip route add default via 192.168.10.1 || true
+    cpu_limit: 100
+    cpus: 1
+    data_volume: 0
+    hide_links: false
+    id: n3
+    image_definition: null
+    label: PC-B
+    node_definition: desktop
+    ram: 512
+    tags: []
+    x: 0
+    y: 80
+    interfaces:
+      - id: i0
+        label: eth0
+        slot: 0
+        type: physical
+  - boot_disk_size: 16
+    configuration: |-
+      # this is a shell script which will be sourced at boot
+      hostname PC-C
+      sudo ifconfig eth0 hw ether c0:c0:c0:c0:c0:c0
+      # configurable user account
+      USERNAME=cisco
+      PASSWORD=cisco
+      # network config
+      ip addr add 192.168.20.101/24 dev eth0 || true
+      ip route add default via 192.168.20.1 || true
+    cpu_limit: 100
+    cpus: 1
+    data_volume: 0
+    hide_links: false
+    id: n4
+    image_definition: null
+    label: PC-C
+    node_definition: desktop
+    ram: 512
+    tags: []
+    x: -480
+    y: 360
+    interfaces:
+      - id: i0
+        label: eth0
+        slot: 0
+        type: physical
+  - boot_disk_size: 16
+    configuration: |-
+      # this is a shell script which will be sourced at boot
+      hostname PC-D
+      sudo ifconfig eth0 hw ether d0:d0:d0:d0:d0:d0
+      # configurable user account
+      USERNAME=cisco
+      PASSWORD=cisco
+      # network config
+      ip addr add 192.168.20.102/24 dev eth0 || true
+      ip route add default via 192.168.20.1 || true
+    cpu_limit: 100
+    cpus: 1
+    data_volume: 0
+    hide_links: false
+    id: n5
+    image_definition: null
+    label: PC-D
+    node_definition: desktop
+    ram: 512
+    tags: []
+    x: 0
+    y: 360
+    interfaces:
+      - id: i0
+        label: eth0
+        slot: 0
+        type: physical
+links:
+  - id: l0
+    n1: n0
+    n2: n1
+    i1: i1
+    i2: i1
+    conditioning: {}
+    label: ASw1-GigabitEthernet0/0<->ASw2-GigabitEthernet0/0
+  - id: l1
+    n1: n0
+    n2: n2
+    i1: i2
+    i2: i0
+    conditioning: {}
+    label: ASw1-GigabitEthernet0/1<->PC-A-eth0
+  - id: l2
+    n1: n0
+    n2: n4
+    i1: i3
+    i2: i0
+    conditioning: {}
+    label: ASw1-GigabitEthernet0/2<->PC-C-eth0
+  - id: l3
+    n1: n1
+    n2: n3
+    i1: i2
+    i2: i0
+    conditioning: {}
+    label: ASw2-GigabitEthernet0/1<->PC-B-eth0
+  - id: l4
+    n1: n1
+    n2: n5
+    i1: i3
+    i2: i0
+    conditioning: {}
+    label: ASw2-GigabitEthernet0/2<->PC-D-eth0
+lab:
+  description: ''
+  notes: ''
+  title: CIS270A_WK1_Lab2_Securing_the_CLI
+  version: 0.2.1
