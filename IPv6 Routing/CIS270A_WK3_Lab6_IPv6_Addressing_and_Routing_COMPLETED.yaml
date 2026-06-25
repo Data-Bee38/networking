@@ -1,0 +1,908 @@
+annotations: []
+nodes:
+  - boot_disk_size: null
+    configuration: |-
+      Building configuration...
+
+      Current configuration : 3641 bytes
+      !
+      ! Last configuration change at 03:14:29 UTC Wed Sep 20 2023
+      !
+      version 15.9
+      service timestamps debug datetime msec
+      service timestamps log datetime msec
+      no service password-encryption
+      !
+      hostname DRtA
+      !
+      boot-start-marker
+      boot-end-marker
+      !
+      !
+      !
+      no aaa new-model
+      !
+      !
+      !
+      mmi polling-interval 60
+      no mmi auto-configure
+      no mmi pvc
+      mmi snmp-timeout 180
+      !
+      !
+      !
+      !
+      !
+      !
+      !
+      !
+      !
+      !
+      !
+      no ip domain lookup
+      ip cef
+      ipv6 unicast-routing
+      no ipv6 cef
+      !
+      multilink bundle-name authenticated
+      !
+      !
+      !
+      !
+      !
+      redundancy
+      !
+      !
+      !
+      !
+      !
+      !
+      !
+      !
+      !
+      !
+      !
+      !
+      !
+      !
+      !
+      interface GigabitEthernet0/0
+       no ip address
+       no shutdown
+       duplex auto
+       speed auto
+       media-type rj45
+      !
+      interface GigabitEthernet0/0.27
+       encapsulation dot1Q 27
+       ipv6 address FE80::DA link-local
+       ipv6 address 2001:DB8:FADE:DA27::1/64
+      !
+      interface GigabitEthernet0/0.58
+       encapsulation dot1Q 58
+       ipv6 address FE80::DA link-local
+       ipv6 address 2001:DB8:FADE:DA58::1/64
+      !
+      interface GigabitEthernet0/1
+       no ip address
+       no shutdown
+       duplex auto
+       speed auto
+       media-type rj45
+       ipv6 address FE80::DA link-local
+       ipv6 address 2001:DB8:FADE:DADB::1/64
+      !
+      interface GigabitEthernet0/2
+       no ip address
+       shutdown
+       duplex auto
+       speed auto
+       media-type rj45
+      !
+      interface GigabitEthernet0/3
+       no ip address
+       shutdown
+       duplex auto
+       speed auto
+       media-type rj45
+      !
+      interface GigabitEthernet0/4
+       no ip address
+       shutdown
+       duplex auto
+       speed auto
+       media-type rj45
+      !
+      interface GigabitEthernet0/5
+       no ip address
+       shutdown
+       duplex auto
+       speed auto
+       media-type rj45
+      !
+      ip forward-protocol nd
+      !
+      !
+      no ip http server
+      no ip http secure-server
+      !
+      ipv6 route 2001:DB8:FADE:DB20::/64 2001:DB8:FADE:DADB::2
+      ipv6 route 2001:DB8:FADE:DB49::/64 2001:DB8:FADE:DADB::2
+      ipv6 ioam timestamp
+      !
+      !
+      !
+      control-plane
+      !
+      banner exec ^CC
+      **************************************************************************
+      * IOSv is strictly limited to use for evaluation, demonstration and IOS  *
+      * education. IOSv is provided as-is and is not supported by Cisco's      *
+      * Technical Advisory Center. Any use or disclosure, in whole or in part, *
+      * of the IOSv Software or Documentation to any third party for any       *
+      * purposes is expressly prohibited except as otherwise authorized by     *
+      * Cisco in writing.                                                      *
+      **************************************************************************^C
+      banner incoming ^CC
+      **************************************************************************
+      * IOSv is strictly limited to use for evaluation, demonstration and IOS  *
+      * education. IOSv is provided as-is and is not supported by Cisco's      *
+      * Technical Advisory Center. Any use or disclosure, in whole or in part, *
+      * of the IOSv Software or Documentation to any third party for any       *
+      * purposes is expressly prohibited except as otherwise authorized by     *
+      * Cisco in writing.                                                      *
+      **************************************************************************^C
+      banner login ^CC
+      **************************************************************************
+      * IOSv is strictly limited to use for evaluation, demonstration and IOS  *
+      * education. IOSv is provided as-is and is not supported by Cisco's      *
+      * Technical Advisory Center. Any use or disclosure, in whole or in part, *
+      * of the IOSv Software or Documentation to any third party for any       *
+      * purposes is expressly prohibited except as otherwise authorized by     *
+      * Cisco in writing.                                                      *
+      **************************************************************************^C
+      !
+      line con 0
+       exec-timeout 0 0
+       logging synchronous
+      line aux 0
+      line vty 0 4
+       login
+       transport input none
+      !
+      no scheduler allocate
+      !
+      end
+    cpu_limit: 100
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n0
+    image_definition: null
+    label: DRtA
+    node_definition: iosv
+    ram: 512
+    tags: []
+    x: 680
+    y: 40
+    interfaces:
+      - id: i0
+        label: Loopback0
+        type: loopback
+      - id: i1
+        label: GigabitEthernet0/0
+        slot: 0
+        type: physical
+      - id: i2
+        label: GigabitEthernet0/1
+        slot: 1
+        type: physical
+      - id: i3
+        label: GigabitEthernet0/2
+        slot: 2
+        type: physical
+      - id: i4
+        label: GigabitEthernet0/3
+        slot: 3
+        type: physical
+      - id: i5
+        label: GigabitEthernet0/4
+        slot: 4
+        type: physical
+      - id: i6
+        label: GigabitEthernet0/5
+        slot: 5
+        type: physical
+  - boot_disk_size: null
+    configuration: |-
+      Building configuration...
+
+      Current configuration : 3641 bytes
+      !
+      ! Last configuration change at 03:14:36 UTC Wed Sep 20 2023
+      !
+      version 15.9
+      service timestamps debug datetime msec
+      service timestamps log datetime msec
+      no service password-encryption
+      !
+      hostname DRtB
+      !
+      boot-start-marker
+      boot-end-marker
+      !
+      !
+      !
+      no aaa new-model
+      !
+      !
+      !
+      mmi polling-interval 60
+      no mmi auto-configure
+      no mmi pvc
+      mmi snmp-timeout 180
+      !
+      !
+      !
+      !
+      !
+      !
+      !
+      !
+      !
+      !
+      !
+      no ip domain lookup
+      ip cef
+      ipv6 unicast-routing
+      no ipv6 cef
+      !
+      multilink bundle-name authenticated
+      !
+      !
+      !
+      !
+      !
+      redundancy
+      !
+      !
+      !
+      !
+      !
+      !
+      !
+      !
+      !
+      !
+      !
+      !
+      !
+      !
+      !
+      interface GigabitEthernet0/0
+       no ip address
+       no shutdown
+       duplex auto
+       speed auto
+       media-type rj45
+      !
+      interface GigabitEthernet0/0.20
+       encapsulation dot1Q 20
+       ipv6 address FE80::DB link-local
+       ipv6 address 2001:DB8:FADE:DB20::1/64
+      !
+      interface GigabitEthernet0/0.49
+       encapsulation dot1Q 49
+       ipv6 address FE80::DB link-local
+       ipv6 address 2001:DB8:FADE:DB49::1/64
+      !
+      interface GigabitEthernet0/1
+       no ip address
+       no shutdown
+       duplex auto
+       speed auto
+       media-type rj45
+       ipv6 address FE80::DB link-local
+       ipv6 address 2001:DB8:FADE:DADB::2/64
+      !
+      interface GigabitEthernet0/2
+       no ip address
+       shutdown
+       duplex auto
+       speed auto
+       media-type rj45
+      !
+      interface GigabitEthernet0/3
+       no ip address
+       shutdown
+       duplex auto
+       speed auto
+       media-type rj45
+      !
+      interface GigabitEthernet0/4
+       no ip address
+       shutdown
+       duplex auto
+       speed auto
+       media-type rj45
+      !
+      interface GigabitEthernet0/5
+       no ip address
+       shutdown
+       duplex auto
+       speed auto
+       media-type rj45
+      !
+      ip forward-protocol nd
+      !
+      !
+      no ip http server
+      no ip http secure-server
+      !
+      ipv6 route 2001:DB8:FADE:DA27::/64 2001:DB8:FADE:DADB::1
+      ipv6 route 2001:DB8:FADE:DA58::/64 2001:DB8:FADE:DADB::1
+      ipv6 ioam timestamp
+      !
+      !
+      !
+      control-plane
+      !
+      banner exec ^CC
+      **************************************************************************
+      * IOSv is strictly limited to use for evaluation, demonstration and IOS  *
+      * education. IOSv is provided as-is and is not supported by Cisco's      *
+      * Technical Advisory Center. Any use or disclosure, in whole or in part, *
+      * of the IOSv Software or Documentation to any third party for any       *
+      * purposes is expressly prohibited except as otherwise authorized by     *
+      * Cisco in writing.                                                      *
+      **************************************************************************^C
+      banner incoming ^CC
+      **************************************************************************
+      * IOSv is strictly limited to use for evaluation, demonstration and IOS  *
+      * education. IOSv is provided as-is and is not supported by Cisco's      *
+      * Technical Advisory Center. Any use or disclosure, in whole or in part, *
+      * of the IOSv Software or Documentation to any third party for any       *
+      * purposes is expressly prohibited except as otherwise authorized by     *
+      * Cisco in writing.                                                      *
+      **************************************************************************^C
+      banner login ^CC
+      **************************************************************************
+      * IOSv is strictly limited to use for evaluation, demonstration and IOS  *
+      * education. IOSv is provided as-is and is not supported by Cisco's      *
+      * Technical Advisory Center. Any use or disclosure, in whole or in part, *
+      * of the IOSv Software or Documentation to any third party for any       *
+      * purposes is expressly prohibited except as otherwise authorized by     *
+      * Cisco in writing.                                                      *
+      **************************************************************************^C
+      !
+      line con 0
+       exec-timeout 0 0
+       logging synchronous
+      line aux 0
+      line vty 0 4
+       login
+       transport input none
+      !
+      no scheduler allocate
+      !
+      end
+    cpu_limit: 100
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n1
+    image_definition: null
+    label: DRtB
+    node_definition: iosv
+    ram: 512
+    tags: []
+    x: 800
+    y: 40
+    interfaces:
+      - id: i0
+        label: Loopback0
+        type: loopback
+      - id: i1
+        label: GigabitEthernet0/0
+        slot: 0
+        type: physical
+      - id: i2
+        label: GigabitEthernet0/1
+        slot: 1
+        type: physical
+      - id: i3
+        label: GigabitEthernet0/2
+        slot: 2
+        type: physical
+      - id: i4
+        label: GigabitEthernet0/3
+        slot: 3
+        type: physical
+      - id: i5
+        label: GigabitEthernet0/4
+        slot: 4
+        type: physical
+      - id: i6
+        label: GigabitEthernet0/5
+        slot: 5
+        type: physical
+  - boot_disk_size: null
+    configuration: |-
+      Building configuration...
+
+      Current configuration : 3002 bytes
+      !
+      ! Last configuration change at 03:12:33 UTC Wed Sep 20 2023
+      !
+      version 15.2
+      service timestamps debug datetime msec
+      service timestamps log datetime msec
+      no service password-encryption
+      service compress-config
+      !
+      hostname SwA
+      !
+      boot-start-marker
+      boot-end-marker
+      !
+      !
+      !
+      no aaa new-model
+      no process cpu extended history
+      no process cpu autoprofile hog
+      !
+      !
+      !
+      !
+      !
+      !
+      !
+      !
+      no ip domain-lookup
+      ip cef
+      no ipv6 cef
+      !
+      !
+      !
+      spanning-tree mode pvst
+      spanning-tree extend system-id
+      !
+      !
+      !
+      !
+      !
+      !
+      !
+      !
+      !
+      !
+      !
+      !
+      !
+      !
+      !
+      interface GigabitEthernet0/0
+       switchport trunk encapsulation dot1q 
+       switchport mode trunk
+       negotiation auto
+      !
+      interface GigabitEthernet0/1
+       switchport access vlan 27
+       switchport mode access
+       negotiation auto
+      !
+      interface GigabitEthernet0/2
+       switchport access vlan 58
+       switchport mode access
+       negotiation auto
+      !
+      interface GigabitEthernet0/3
+       negotiation auto
+      !
+      ip forward-protocol nd
+      !
+      ip http server
+      ip http secure-server
+      !
+      ip ssh server algorithm encryption aes128-ctr aes192-ctr aes256-ctr
+      ip ssh client algorithm encryption aes128-ctr aes192-ctr aes256-ctr
+      !
+      !
+      no service-routing capabilities-manager
+      !
+      !
+      !
+      !
+      control-plane
+      !
+      banner exec ^CCCC
+      IOSv - Cisco Systems Confidential -
+
+      Supplemental End User License Restrictions
+
+      This IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.
+
+      By using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.
+      ^C
+      banner incoming ^CCCC
+      IOSv - Cisco Systems Confidential -
+
+      Supplemental End User License Restrictions
+
+      This IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.
+
+      By using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.
+      ^C
+      banner login ^CCCC
+      IOSv - Cisco Systems Confidential -
+
+      Supplemental End User License Restrictions
+
+      This IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.
+
+      By using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.
+      ^C
+      !
+      line con 0
+       exec-timeout 0 0
+       logging synchronous
+      line aux 0
+      line vty 0 4
+       login
+      !
+      !
+      end
+    cpu_limit: 100
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n2
+    image_definition: null
+    label: SwA
+    node_definition: iosvl2
+    ram: 768
+    tags: []
+    x: 560
+    y: 40
+    interfaces:
+      - id: i0
+        label: Loopback0
+        type: loopback
+      - id: i1
+        label: GigabitEthernet0/0
+        slot: 0
+        type: physical
+      - id: i2
+        label: GigabitEthernet0/1
+        slot: 1
+        type: physical
+      - id: i3
+        label: GigabitEthernet0/2
+        slot: 2
+        type: physical
+      - id: i4
+        label: GigabitEthernet0/3
+        slot: 3
+        type: physical
+  - boot_disk_size: null
+    configuration: |-
+      Building configuration...
+
+      Current configuration : 3002 bytes
+      !
+      ! Last configuration change at 03:13:26 UTC Wed Sep 20 2023
+      !
+      version 15.2
+      service timestamps debug datetime msec
+      service timestamps log datetime msec
+      no service password-encryption
+      service compress-config
+      !
+      hostname SwB
+      !
+      boot-start-marker
+      boot-end-marker
+      !
+      !
+      !
+      no aaa new-model
+      no process cpu extended history
+      no process cpu autoprofile hog
+      !
+      !
+      !
+      !
+      !
+      !
+      !
+      !
+      no ip domain-lookup
+      ip cef
+      no ipv6 cef
+      !
+      !
+      !
+      spanning-tree mode pvst
+      spanning-tree extend system-id
+      !
+      !
+      !
+      !
+      !
+      !
+      !
+      !
+      !
+      !
+      !
+      !
+      !
+      !
+      !
+      interface GigabitEthernet0/0
+       switchport trunk encapsulation dot1q 
+       switchport mode trunk
+       negotiation auto
+      !
+      interface GigabitEthernet0/1
+       switchport access vlan 20
+       switchport mode access
+       negotiation auto
+      !
+      interface GigabitEthernet0/2
+       switchport access vlan 49
+       switchport mode access
+       negotiation auto
+      !
+      interface GigabitEthernet0/3
+       negotiation auto
+      !
+      ip forward-protocol nd
+      !
+      ip http server
+      ip http secure-server
+      !
+      ip ssh server algorithm encryption aes128-ctr aes192-ctr aes256-ctr
+      ip ssh client algorithm encryption aes128-ctr aes192-ctr aes256-ctr
+      !
+      !
+      no service-routing capabilities-manager
+      !
+      !
+      !
+      !
+      control-plane
+      !
+      banner exec ^CCCC
+      IOSv - Cisco Systems Confidential -
+
+      Supplemental End User License Restrictions
+
+      This IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.
+
+      By using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.
+      ^C
+      banner incoming ^CCCC
+      IOSv - Cisco Systems Confidential -
+
+      Supplemental End User License Restrictions
+
+      This IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.
+
+      By using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.
+      ^C
+      banner login ^CCCC
+      IOSv - Cisco Systems Confidential -
+
+      Supplemental End User License Restrictions
+
+      This IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.
+
+      By using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.
+      ^C
+      !
+      line con 0
+       exec-timeout 0 0
+       logging synchronous
+      line aux 0
+      line vty 0 4
+       login
+      !
+      !
+      end
+    cpu_limit: 100
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n3
+    image_definition: null
+    label: SwB
+    node_definition: iosvl2
+    ram: 768
+    tags: []
+    x: 920
+    y: 40
+    interfaces:
+      - id: i0
+        label: Loopback0
+        type: loopback
+      - id: i1
+        label: GigabitEthernet0/0
+        slot: 0
+        type: physical
+      - id: i2
+        label: GigabitEthernet0/1
+        slot: 1
+        type: physical
+      - id: i3
+        label: GigabitEthernet0/2
+        slot: 2
+        type: physical
+      - id: i4
+        label: GigabitEthernet0/3
+        slot: 3
+        type: physical
+  - boot_disk_size: 16
+    configuration: |-
+      # this is a shell script which will be sourced at boot
+      hostname PC-49
+      # configurable user account
+      USERNAME=cisco
+      PASSWORD=cisco
+      ip -6 address add fe80::49 dev eth0 || true
+      ip -6 address add 2001:db8:fade:db49::49/64 dev eth0 || true
+      ip -6 route add default via fe80::db dev eth0 || true
+    cpu_limit: 100
+    cpus: 1
+    data_volume: 0
+    hide_links: false
+    id: n4
+    image_definition: null
+    label: PC-49
+    node_definition: desktop
+    ram: 512
+    tags: []
+    x: 1040
+    y: 0
+    interfaces:
+      - id: i0
+        label: eth0
+        slot: 0
+        type: physical
+  - boot_disk_size: 16
+    configuration: |-
+      # this is a shell script which will be sourced at boot
+      hostname PC-20
+      # configurable user account
+      USERNAME=cisco
+      PASSWORD=cisco
+      ip -6 address add fe80::20 dev eth0 || true
+      ip -6 address add 2001:db8:fade:db20::20/64 dev eth0 || true
+      ip -6 route add default via fe80::db dev eth0 || true
+    cpu_limit: 100
+    cpus: 1
+    data_volume: 0
+    hide_links: false
+    id: n5
+    image_definition: null
+    label: PC-20
+    node_definition: desktop
+    ram: 512
+    tags: []
+    x: 1040
+    y: 80
+    interfaces:
+      - id: i0
+        label: eth0
+        slot: 0
+        type: physical
+  - boot_disk_size: 16
+    configuration: |-
+      # this is a shell script which will be sourced at boot
+      hostname PC-58
+      # configurable user account
+      USERNAME=cisco
+      PASSWORD=cisco
+      #IPv6 addressing
+      ip -6 address add fe80::58 dev eth0 || true
+      ip -6 address add 2001:db8:fade:da58::58/64 dev eth0 || true
+      ip -6 route add default via fe80::da dev eth0 || true
+    cpu_limit: 100
+    cpus: 1
+    data_volume: 0
+    hide_links: false
+    id: n6
+    image_definition: null
+    label: PC-58
+    node_definition: desktop
+    ram: 512
+    tags: []
+    x: 440
+    y: 0
+    interfaces:
+      - id: i0
+        label: eth0
+        slot: 0
+        type: physical
+  - boot_disk_size: 16
+    configuration: |-
+      # this is a shell script which will be sourced at boot
+      hostname PC-27
+      # configurable user account
+      USERNAME=cisco
+      PASSWORD=cisco
+      ip -6 address add fe80::27 dev eth0 || true
+      ip -6 address add 2001:db8:fade:da27::27/64 dev eth0 || true
+      ip -6 route add default via fe80::da dev eth0 || true
+    cpu_limit: 100
+    cpus: 1
+    data_volume: 0
+    hide_links: false
+    id: n7
+    image_definition: null
+    label: PC-27
+    node_definition: desktop
+    ram: 512
+    tags: []
+    x: 440
+    y: 80
+    interfaces:
+      - id: i0
+        label: eth0
+        slot: 0
+        type: physical
+links:
+  - id: l0
+    n1: n2
+    n2: n0
+    i1: i1
+    i2: i1
+    conditioning: {}
+    label: SwA-GigabitEthernet0/0<->DRtA-GigabitEthernet0/0
+  - id: l1
+    n1: n3
+    n2: n1
+    i1: i1
+    i2: i1
+    conditioning: {}
+    label: SwB-GigabitEthernet0/0<->DRtB-GigabitEthernet0/0
+  - id: l2
+    n1: n7
+    n2: n2
+    i1: i0
+    i2: i2
+    conditioning: {}
+    label: PC-27-eth0<->SwA-GigabitEthernet0/1
+  - id: l3
+    n1: n6
+    n2: n2
+    i1: i0
+    i2: i3
+    conditioning: {}
+    label: PC-58-eth0<->SwA-GigabitEthernet0/2
+  - id: l4
+    n1: n3
+    n2: n5
+    i1: i2
+    i2: i0
+    conditioning: {}
+    label: SwB-GigabitEthernet0/1<->PC-20-eth0
+  - id: l5
+    n1: n3
+    n2: n4
+    i1: i3
+    i2: i0
+    conditioning: {}
+    label: SwB-GigabitEthernet0/2<->PC-49-eth0
+  - id: l6
+    n1: n0
+    n2: n1
+    i1: i2
+    i2: i2
+    conditioning: {}
+    label: DRtA-GigabitEthernet0/1<->DRtB-GigabitEthernet0/1
+lab:
+  description: ''
+  notes: ''
+  title: CIS270A_WK3_Lab6_IPv6_Addressing_and_Routing
+  version: 0.2.1
