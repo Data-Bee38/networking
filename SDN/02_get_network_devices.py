@@ -34,7 +34,7 @@ networkDevices = response_json["response"]
 # loop through all the objects retrieved and print them on the screen
 
 """
-#Returns the result in a list
+# Puts the results inside a list
 hosts = response_json["response"]
 results = []
 for host in hosts:
