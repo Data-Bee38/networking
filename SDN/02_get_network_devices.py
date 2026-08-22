@@ -33,6 +33,16 @@ networkDevices = response_json["response"]
 
 # loop through all the objects retrieved and print them on the screen
 
+"""
+#Returns the result in a list
+hosts = response_json["response"]
+results = []
+for host in hosts:
+    results.append(host)
+
+print(results)
+"""
+
 for networkDevice in networkDevices:
     print(networkDevice["hostname"], "\t", networkDevice["platformId"], "\t", networkDevice["managementIpAddress"])
     print("\r \n")
