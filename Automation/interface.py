@@ -15,17 +15,13 @@ device = {
 }
 
 ssh = ConnectHandler(**device)
-
 output = ssh.send_command("show ip int brief")
-
 print(output)
-
 ssh.disconnect()
 
 
 
 #ROUTER CONFIGURATION TO ENABLE SSH
-
 '''
 enable
 configure terminal
