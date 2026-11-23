@@ -7,6 +7,10 @@ username = input("Enter Username : ")
 pwd = getpass("Enter Password : ")
 ip = input("Enter Router IP : ")
 
+interface = input("Enter Interface Name : ")
+interface_ip = input("Enter Interface IP : ")
+mask = input("Enter Subnet Mask : ")
+
 device = {
     "device_type": "cisco_ios",
     "host": ip,
@@ -15,41 +19,14 @@ device = {
 }
 
 ssh = ConnectHandler(**device)
-output = ssh.send_command("show ip int brief")
+
+command = {
+    f"interface {interface}",
+    f"ip address {interface_ip} {mask}",
+    f"no shutdown"
+}
+#GLOBAL CONFIG MODE
+output = ssh.send_config_set(command)
 print(output)
 ssh.disconnect()
-
-
-
-#ROUTER CONFIGURATION TO ENABLE SSH
-'''
-enable
-configure terminal
-
-hostname R1
-
-! Configure management interface
-interface GigabitEthernet0/0
- ip address 192.168.1.220 255.255.255.0
- no shutdown
- exit
-
-! Configure SSH
-ip domain-name lab.local
-
-username admin privilege 15 secret Cisco123!
-
-crypto key generate rsa modulus 1024
-
-ip ssh version 2
-
-line vty 0 4
- login local
- transport input ssh
- exit
-
-end
-write memory
-
-'''
 
