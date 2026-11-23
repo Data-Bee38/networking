@@ -1,3 +1,4 @@
+# WAP to get device info
 
 from netmiko import ConnectHandler
 from getpass import getpass
@@ -76,3 +77,4 @@ for host in device_list:
         print("Error:", e)
 
 print("\nAll devices processed!")
+
