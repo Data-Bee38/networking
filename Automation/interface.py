@@ -1,4 +1,4 @@
-# WAP to check Interface IP on any router by any user
+# WAP to configure an interface
 
 from netmiko import ConnectHandler
 from getpass import getpass
@@ -29,4 +29,5 @@ command = {
 output = ssh.send_config_set(command)
 print(output)
 ssh.disconnect()
+
 
