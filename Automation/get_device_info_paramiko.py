@@ -3,36 +3,62 @@
 import paramiko
 import time
 
-# Create SSH client object
-ssh = paramiko.SSHClient()
+#Router List:
+routers = [
+    "192.168.1.220",
+    "192.168.1.221",
+    "192.168.1.222"
+]
 
-ip = input("Enter Device IP :")
-device = {
-    "hostname": ip,
-    "username": "admin",
-    "password": "cisco@123"
-}
 
-# Taking care of fingerprint message --> Accept
-ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+# Show Commands List
+show_commands = [
+    "show ip interface brief",
+    "show ip route",
+    "show ip arp",
+    "show ip ospf neighbor",
+    "show version"
+]
 
-print(f"Connecting to {ip}")
-ssh.connect(**device)
 
-#/n = presing enter in terminal
-shell = ssh.invoke_shell()
-shell.send("terminal length 0\n")
-shell.send("show run\n")
-shell.send("show ip int brief\n")
-shell.send("show ip arp\n")
+for ip in routers:
+    ssh = paramiko.SSHClient()
+    ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 
-#set timeout
-time.sleep(1)
+    try:
+        ssh.connect(username="admin", password="cisco@123", hostname=ip)
+        print("Connected Successfully")
 
-#set buffer size to recieve data back from device
-output = shell.recv(65535).decode()
-print(output)
+        shell = ssh.invoke_shell()
+        time.sleep(2)
 
-if ssh.get_transport().is_active():
-    print("Closing Connection")
-    ssh.close()
+        #clear intial router output
+        while shell.recv_ready():
+            shell.recv(65535)
+
+        #\n = the same as pressing enter in the terminal
+        shell.send("terminal length 0\n")
+        time.sleep(1)
+
+        while shell.recv_ready():
+            shell.recv(65535)
+
+        for command in show_commands:
+            print("\n Executing:", command)
+            shell.send(command + "\n")
+            time.sleep(2)
+            output = ""
+
+            #buffer size to return device info
+            while shell.recv_ready():
+                router_output = shell.recv(65535).decode()
+                output += router_output
+
+            print(output)
+
+    except Exception as router_error:
+        print("Execution Failed", ip)
+        print(router_error)
+
+    finally:
+        ssh.close()
