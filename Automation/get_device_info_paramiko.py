@@ -36,7 +36,7 @@ for ip in routers:
         while shell.recv_ready():
             shell.recv(65535)
 
-        #\n = the same as pressing enter in the terminal
+        #disables pagination. the \n = the same as pressing enter in the terminal
         shell.send("terminal length 0\n")
         time.sleep(1)
 
