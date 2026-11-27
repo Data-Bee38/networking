@@ -2,7 +2,7 @@
 Cisco IOS multi-router automation lab using Netmiko.
 
 Install:  py -m pip install netmiko
-Run:      py netmiko_menu.py
+Run:      py netmiko_device_configuration.py
 
 Edit routers.txt first. Put one router management IP/hostname per line.
 
