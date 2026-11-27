@@ -1,4 +1,13 @@
+"""
+Cisco IOS multi-router automation lab using Netmiko.
 
+Install:  py -m pip install netmiko
+Run:      py netmiko_device_conf.py
+
+Edit routers.txt first. Put one router management IP/hostname per line.
+
+MAKE SURE THE ROUTERS HAVE THE CORRECT USERNAME, PASSWORD & PRIVILEGE
+"""
 from netmiko import ConnectHandler
 
 file = open("routers.txt", "r")
