@@ -16,12 +16,7 @@ data = file.readlines()
 for host in data:
     host = host.strip()
 
-    ssh = ConnectHandler(
-        username="admin",
-        password="cisco@123",
-        host=host,
-        device_type="cisco_ios"
-    )
+    ssh = ConnectHandler(username="admin",password="cisco@123",host=host,device_type="cisco_ios")
 
     while True:
         print("you are connected to router", host)
